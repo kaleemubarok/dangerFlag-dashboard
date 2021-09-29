@@ -6,13 +6,13 @@
     
 	async function getRandomNumber() {
 		setTimeout(() => getRandomNumber(), 15000)
-        const res = await fetch(`http://localhost:8082/json`);
+        const res = await fetch(`http://localhost:8082/data`);
 		const json = await res.json();
 
         let stat = json["status"];
         water=stat.water;
         wind=stat.wind;
-        console.log("water:",stat.water," - wind:",stat.wind);
+        // console.log("water:",stat.water," - wind:",stat.wind);
 
 		if (res.ok) {
 			return stat;
